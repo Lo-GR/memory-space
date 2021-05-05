@@ -78,7 +78,6 @@ class MemoryControl extends React.Component {
       )
     }
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
-      console.log(auth.currentUser)
       return (
         <React.Fragment>
           <h1>Please sign in to create memories</h1>
@@ -86,7 +85,7 @@ class MemoryControl extends React.Component {
       )
     }
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
-      console.log(auth.currentUser)
+      // console.log(auth.currentUser)
       let currentlyVisible = null;
       let buttonText = null;
       if (this.state.editing){
