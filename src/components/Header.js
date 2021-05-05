@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 class Header extends React.Component {
-  constructor(props){
-    super(props);
-  }
+  // constructor(props){
+  //   super(props);
+  // }
 // function Header(props){
   render (){
     const auth = this.props.firebase.auth();
