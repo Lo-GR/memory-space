@@ -13,18 +13,10 @@ function Login(){
     });
   }
 
-  function doLogOut() {
-    firebase.auth().signOut().then(function() {
-      console.log("Successfully logged out!");
-    }).catch(function(error) {
-      console.log(error.message);
-    });
-  }
-
   return (
     <>
       <h1>Log in</h1>
-      <form id="form" on Submit={doLogIn}>
+      <form id="form" onSubmit={doLogIn}>
         <input
           type='text'
           name='loginEmail'
@@ -35,10 +27,6 @@ function Login(){
         placeholder='Password' />
         <button type='submit'>Log in</button>
       </form>
-
-      <h1>Log Out</h1>
-      <button onClick={doLogOut}>Log Out</button>
-
     </>
   );
 }

@@ -10,8 +10,8 @@ function MemoryDetail(props){
     {/* <div class="moving_shape">
       </div> */}
       <FadeIn transitionDuration="1000">
-      <div class="mem-detail">
-        <div class="center">
+      <div className="mem-detail">
+        <div className="center">
           <h2 className="detailKey">Memory Details:</h2>
           <h3>Date: <span className="detailKey">{memory.date}</span></h3>
           <h3>Name: <span className="detailKey">{memory.name}</span></h3>
@@ -23,6 +23,11 @@ function MemoryDetail(props){
       </FadeIn>
     </>
   )
+}
+
+
+MemoryDetail.propTypes={
+  selectedMemory: PropTypes.object
 }
 
 const mapStateToProps = state =>{

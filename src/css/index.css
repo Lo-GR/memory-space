@@ -88,22 +88,24 @@ a:hover{
 
 #link{
   color: rgb(128, 117, 117);
-  font-size: 20px;
+  font-size: 20px; 
 }
 
 #link:hover{
-  color: rgb(218, 196, 196);
+  color: rgb(203, 153, 212);
   cursor: pointer;
 }
 
 .memory {
   margin: auto;
   margin-bottom: 40px;
-  background-color: rgb(219, 212, 231);
+  background-color: rgb(220, 212, 233);
+  opacity: 70%;
   border-radius: 40px;
   padding: 30px;
   padding-bottom: 50px;
   width: 40%;
+  color: rgb(33, 26, 36);
 }
 
 @media only screen and (max-width: 700px){

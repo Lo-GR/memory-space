@@ -16,7 +16,7 @@ function Signup(){
   return (
     <>
       <h1>Sign Up</h1>
-      <form id="form" on Submit={doSignUp}>
+      <form id="form" onSubmit={doSignUp}>
         <input
           type='text'
           name='email'
