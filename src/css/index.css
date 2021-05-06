@@ -1,71 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Playfair+Display:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Playfair+Display:wght@700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
 html {
   height: 100%;
 }
+
+body {
+  margin: 0;
+  background: rgb(236, 229, 248);  
+  height: 100%;
+  font-family: 'Crimson Text', serif;
+  color: rgb(141, 129, 129);
+}
+
+textarea {
+  margin-bottom: 15px;
+}
+
 input, textarea{
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 20px;
   box-sizing: border-box;
-  padding: 8px;
-  margin: 2px;
+  padding: 10px;
+  margin: 5px;
+  background-color: rgb(247, 243, 250)
+}
+
+input:focus, textarea:focus {
+  border-radius: 20px;
+  outline: none;
+  background-color: white;
+  border: 1px solid rgb(110, 110, 163);
 }
 
 button{
   background-color: rgb(141, 129, 129); 
   border: none;
   color: white;
-  padding: 5px 12px;
+  padding: 8px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 8px;
   transition-duration: .4s;
   margin: 3px;
+  font-family: 'Crimson Text', serif;
 }
 
 button:hover {
   background-color: #ffffff; 
   color: rgb(141, 129, 129);
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(to bottom right, rgb(99, 70, 179), rgb(92, 173, 211)); */
-  /* background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8); */
-  background: rgb(236, 229, 248);  
-  height: 100%;
-  font-family: 'Crimson Text', serif;
-  color: rgb(141, 129, 129);
-
-}
-
-h1 {
-  padding: 20px;
-  text-align: center;
-  opacity: 40%;
-  color: black;
-  /* font-family: 'Playfair Display', serif; */
-  font-family: 'Crimson Text', serif;
-  font-size: 40px;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.center {
-  margin: auto;
-  width: 50%;
-  text-align: center;
 }
 
 #button-center{
@@ -75,31 +63,80 @@ code {
   margin-top: 30px;
 }
 
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.center {
+  text-align: center;
+}
+
+a {
+  color: rgb(128, 117, 117);
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+a:hover{
+  color: rgb(218, 196, 196);
+  text-decoration: underline;
+}
+
 #link{
   color: rgb(128, 117, 117);
-  font-size: 20px;
+  font-size: 20px; 
 }
 
 #link:hover{
-  color: rgb(218, 196, 196);
+  color: rgb(203, 153, 212);
   cursor: pointer;
 }
 
 .memory {
   margin: auto;
   margin-bottom: 40px;
-  background-color: rgb(219, 212, 231);
+  background-color: rgb(220, 212, 233);
+  opacity: 70%;
   border-radius: 40px;
   padding: 30px;
-  width: 400px;
+  padding-bottom: 50px;
+  width: 40%;
+  color: rgb(33, 26, 36);
+}
+
+@media only screen and (max-width: 700px){
+  .memory{
+    width:60%;
+  }
+}
+@media only screen and (max-width: 500px){
+  .memory{
+    width:75%;
+  }
 }
 
 .memory-list {
   padding-bottom:50px;
-  /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 220px);
-    grid-gap: 30px; */
+  margin:auto;
+}
+
+.mem-detail {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  font-size: 17px;
+}
+
+/* .mem-detail p {
+  font-weight: 100;
+} */
+
+.mem-detail button {
+  margin-top: 50px;
 }
 
 #form {
@@ -116,6 +153,41 @@ h3{
   margin: 5px;
 }
 
+h1 {
+  padding: 20px;
+  text-align: center;
+  opacity: 40%;
+  color: black;
+  font-family: 'Crimson Text', serif;
+  font-size: 40px;
+}
+.detailKey {
+  font-weight: 100;
+}
+#nav {
+  width: 100%;
+  /* padding: 2px 3%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* @media only screen and (min-width: 800px) {
+  #nav{
+    justify-content: flex-end;
+  }
+} */
+
+/* @media only screen and (max-width: 800px){
+  #nav{
+    justify-content: center;
+  }
+} */
+
+
+/* #nav h1 {
+  margin: auto;
+} */
 
 /*Blob Below*/
 

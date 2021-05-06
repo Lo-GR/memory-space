@@ -6,7 +6,7 @@ import EditMemoryForm from './EditMemoryForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
-import { withFirestore } from 'react-redux-firebase'
+import { withFirestore, isLoaded } from 'react-redux-firebase'
 
 class MemoryControl extends React.Component {
   constructor(props){
@@ -69,35 +69,53 @@ class MemoryControl extends React.Component {
   }
 
   render() {
-    let currentlyVisible = null;
-    let buttonText = null;
-    if (this.state.editing){
-      currentlyVisible= <EditMemoryForm memory = {this.props.selectedMemory} onEditMemory = {this.handleEditingMemory} />
-      buttonText= "Return to Memories"
-    } else if (this.props.selectedMemory != null){
-      currentlyVisible = <MemoryDetail onClickingDelete = {this.handleDeletingMemory} onClickingEdit = {this.handleEditClick} />
-      buttonText = "Return to Memories"
-    } else if (this.state.formVisible){
-      currentlyVisible = <NewMemoryForm onNewMemoryCreation={this.handleAddingMemory}/>
-      buttonText = "Return to Memories"
-    } else {
-      buttonText = "Create New Memory"
-      currentlyVisible = <MemoryList  onMemorySelection={this.handleSelectMemory}  />
+    const auth = this.props.firebase.auth();
+    if (!isLoaded(auth)) {
+      return (
+        <React.Fragment>
+          <h1>Loading...</h1>
+        </React.Fragment>
+      )
     }
-    return(
-      <React.Fragment>
-        <div >
-          <button id="button-center" onClick={this.handleClick}>{buttonText}</button>
-          {currentlyVisible}
-        </div>
-      </React.Fragment>
-    )
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <React.Fragment>
+          <h1>Please sign in to create memories</h1>
+        </React.Fragment>
+      )
+    }
+    if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      // console.log(auth.currentUser)
+      let currentlyVisible = null;
+      let buttonText = null;
+      if (this.state.editing){
+        currentlyVisible= <EditMemoryForm memory = {this.props.selectedMemory} onEditMemory = {this.handleEditingMemory} />
+        buttonText= "Return to Memories"
+      } else if (this.props.selectedMemory != null){
+        currentlyVisible = <MemoryDetail onClickingDelete = {this.handleDeletingMemory} onClickingEdit = {this.handleEditClick} />
+        buttonText = "Return to Memories"
+      } else if (this.state.formVisible){
+        currentlyVisible = <NewMemoryForm onNewMemoryCreation={this.handleAddingMemory}/>
+        buttonText = "Return to Memories"
+      } else {
+        buttonText = "Create New Memory"
+        currentlyVisible = <MemoryList  onMemorySelection={this.handleSelectMemory}  />
+      }
+      return(
+        <React.Fragment>
+          <div >
+            <button id="button-center" onClick={this.handleClick}>{buttonText}</button>
+            {currentlyVisible}
+          </div>
+        </React.Fragment>
+      )
+    }
   }
-
 }
 
-// MemoryControl.propTypes = {
-// }
+MemoryControl.propTypes = {
+  selectedMemory: PropTypes.object
+}
 
 const mapStateToProps = state => {
   return {

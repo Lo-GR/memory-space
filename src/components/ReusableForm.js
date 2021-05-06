@@ -15,10 +15,14 @@ function ReusableForm(props) {
           name='name'
           placeholder='Memory Name'
           required />
-        <textarea
-          name='description'
-          placeholder='Describe your memory or dream'
-          required />
+        <div>
+          <textarea 
+            rows="15" 
+            cols="50"
+            name='description'
+            placeholder='Describe your memory or dream'
+            required />
+        </div>
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
