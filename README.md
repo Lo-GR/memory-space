@@ -149,6 +149,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ![Component Diagram](/src/img/component-diagram.png)
 
 </details>
+
 ---
 
 ## _License_ ⚖️
