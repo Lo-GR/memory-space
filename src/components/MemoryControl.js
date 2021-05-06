@@ -12,7 +12,6 @@ class MemoryControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      // selectedMemory: null,
       editing: false,
       formVisible: false,
       visible: true

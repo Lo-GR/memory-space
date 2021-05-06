@@ -9,17 +9,13 @@ export default function Background(){
             <li></li>
             <li></li>
             <li></li>
-            {/* <div class="purple"> */}
-              <li></li>
-              <li></li>
-              <li></li>
-            {/* </div> */}
-            {/* <div class="orange"> */}
               <li></li>
               <li></li>
               <li></li>
               <li></li>
-            {/* </div> */}
+              <li></li>
+              <li></li>
+              <li></li>
           </ul>
         </div >
     </>

@@ -1,42 +1,13 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import { withFirestore, isLoaded } from 'react-redux-firebase';
+// import { Link } from 'react-router-dom';
 
-class Header extends React.Component {
-
-  render (){
-    const auth = this.props.firebase.auth();
-    if (!isLoaded(auth)) {
-      return(
-        <>
-          <h1>Memory Space</h1>
-          <h1>Loading...</h1>
-        </>
-      )
-    }
-    if ((isLoaded(auth)) && (auth.currentUser == null)) {
-      return (
-        <>
-          <h1>Memory Space</h1>
-          <div id="nav">
-            <span className="links"><Link to="/">Home</Link> | <Link to="/login">Log In</Link> | <Link to="/signup">Sign Up</Link> |<Link to="/logout">Log Out</Link> </span>
-          </div>
-        </>
-      );
-    }
-    if ((isLoaded(auth)) && (auth.currentUser != null)) {
-      return (
-        <>
-        <h1>Memory Space</h1>
-        <div id="nav">
-          <span className="links"><Link to="/">Home</Link> |<Link to="/logout">Log Out</Link></span>
-        </div>
-        </>
-      );
-    }
-
-
-  }
+function Header(){
+  return (
+    <>
+    <h1>Memory Space</h1>
+    <span class="center"><p>This is a space where anyone can post their memories. We ask that you only edit or delete your own memory.</p></span>
+    </>
+  );
 }
 
-export default withFirestore(Header);
+export default Header;

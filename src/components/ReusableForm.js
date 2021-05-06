@@ -5,16 +5,20 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form id="form" onSubmit={props.formSubmissionHandler}>
-        <input
-          type='date'
-          name='date'
-          placeholder='Date'
-          required />
-        <input
-          type='text'
-          name='name'
-          placeholder='Memory Name'
-          required />
+        <div>
+          <input
+            type='date'
+            name='date'
+            placeholder='Date'
+            required />
+        </div>
+        <div>
+          <input
+            type='text'
+            name='name'
+            placeholder='Memory Name'
+            required />
+          </div>
         <div>
           <textarea 
             rows="15" 
@@ -23,7 +27,9 @@ function ReusableForm(props) {
             placeholder='Describe your memory or dream'
             required />
         </div>
-        <button type='submit'>{props.buttonText}</button>
+        <div>
+          <button type='submit'>{props.buttonText}</button>
+        </div>
       </form>
     </React.Fragment>
   );
